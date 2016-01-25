@@ -10,26 +10,35 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var college: College = College()
+    
+    @IBOutlet weak var schoolNameTF: UITextField!
+    @IBOutlet weak var locationTF: UITextField!
+    @IBOutlet weak var enrollmentTF: UITextField!
+    @IBOutlet weak var actTF: UITextField!
+    @IBOutlet weak var colorsTF: UITextField!
+    @IBOutlet weak var schoolImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        schoolNameTF.text = college.name
+        locationTF.text = college.location
+        enrollmentTF.text = String(college.enrollment)
+        actTF.text = String(college.act)
+        colorsTF.text = college.colors
+        schoolImage.image = college.image
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveTapped(sender: UIBarButtonItem) {
+        college.name = schoolNameTF.text!
+        college.location = locationTF.text!
+        college.enrollment = Int(locationTF.text!)!
+        college.act = Int(actTF.text!)!
+        college.colors = colorsTF.text!
+        //college.image = schoolImage.image
     }
-    */
+    
+    
 
 }
