@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3FF0D1541C4FFDAB00222B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0D1531C4FFDAB00222B53 /* AppDelegate.swift */; };
-		3FF0D1561C4FFDAB00222B53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0D1551C4FFDAB00222B53 /* ViewController.swift */; };
+		3FF0D1561C4FFDAB00222B53 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0D1551C4FFDAB00222B53 /* MainViewController.swift */; };
 		3FF0D1591C4FFDAB00222B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF0D1571C4FFDAB00222B53 /* Main.storyboard */; };
 		3FF0D15B1C4FFDAB00222B53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF0D15A1C4FFDAB00222B53 /* Assets.xcassets */; };
 		3FF0D15E1C4FFDAB00222B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF0D15C1C4FFDAB00222B53 /* LaunchScreen.storyboard */; };
+		3FF0D1661C4FFE5700222B53 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0D1651C4FFE5700222B53 /* DetailViewController.swift */; };
+		3FF0D1681C4FFEBF00222B53 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0D1671C4FFEBF00222B53 /* College.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3FF0D1501C4FFDAB00222B53 /* College Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "College Profile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF0D1531C4FFDAB00222B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FF0D1551C4FFDAB00222B53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FF0D1551C4FFDAB00222B53 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3FF0D1581C4FFDAB00222B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FF0D15A1C4FFDAB00222B53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FF0D15D1C4FFDAB00222B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF0D15F1C4FFDAB00222B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF0D1651C4FFE5700222B53 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FF0D1671C4FFEBF00222B53 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				3FF0D1531C4FFDAB00222B53 /* AppDelegate.swift */,
-				3FF0D1551C4FFDAB00222B53 /* ViewController.swift */,
+				3FF0D1551C4FFDAB00222B53 /* MainViewController.swift */,
+				3FF0D1651C4FFE5700222B53 /* DetailViewController.swift */,
 				3FF0D1571C4FFDAB00222B53 /* Main.storyboard */,
+				3FF0D1671C4FFEBF00222B53 /* College.swift */,
 				3FF0D15A1C4FFDAB00222B53 /* Assets.xcassets */,
 				3FF0D15C1C4FFDAB00222B53 /* LaunchScreen.storyboard */,
 				3FF0D15F1C4FFDAB00222B53 /* Info.plist */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF0D1561C4FFDAB00222B53 /* ViewController.swift in Sources */,
+				3FF0D1661C4FFE5700222B53 /* DetailViewController.swift in Sources */,
+				3FF0D1561C4FFDAB00222B53 /* MainViewController.swift in Sources */,
 				3FF0D1541C4FFDAB00222B53 /* AppDelegate.swift in Sources */,
+				3FF0D1681C4FFEBF00222B53 /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
