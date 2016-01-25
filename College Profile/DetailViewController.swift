@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
     @IBAction func saveTapped(sender: UIBarButtonItem) {
         college.name = schoolNameTF.text!
         college.location = locationTF.text!
-        college.enrollment = Int(locationTF.text!)!
+        college.enrollment = Int(enrollmentTF.text!)!
         college.act = Int(actTF.text!)!
         college.colors = colorsTF.text!
         //college.image = schoolImage.image
