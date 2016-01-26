@@ -24,6 +24,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         colleges.append(College(name: "Purdue", location: "West Lafayette, Indiana", mascot: "Boilermakers", colors: "Black and Old Gold", act: 30, enrollment: 38770, image: UIImage(named: "Purdue")!))
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        collegeHolder.reloadData()
+    }
+
     //Table View Functions
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colleges.count
@@ -66,13 +71,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "Which college are you looking at?"
         }
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "Where is you college located?"
+        }
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What is the enrollment?"
+            textField.keyboardType = .NumberPad
+        }
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What is the average ACT?"
+            textField.keyboardType = .NumberPad
+        }
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What are the school colors?"
+        }
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What is the school mascot?"
+        }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
         
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let collegeTextField = alert.textFields![0] as UITextField
-            self.colleges.append(College(name: collegeTextField.text!))
+            let locationTextField = alert.textFields![1] as UITextField
+            let enrollmentTextField = alert.textFields![2] as UITextField
+            let actTextField = alert.textFields![3] as UITextField
+            let colorsTextField = alert.textFields![4] as UITextField
+            let mascotTextField = alert.textFields![5] as UITextField
+            self.colleges.append(College(name: collegeTextField.text!, location: locationTextField.text!, mascot: mascotTextField.text!, colors: colorsTextField.text!, act: Int(actTextField.text!)!, enrollment: Int(enrollmentTextField.text!)!, image: UIImage(named: "Default")!))
             self.collegeHolder.reloadData()
         }
         

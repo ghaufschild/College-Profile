@@ -8,11 +8,12 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DetailViewController: UIViewController//, UIImagePickerControllerDelegate, UINavigationControllerDelegate 
+{
 
     var college: College = College()
-    var chosenImage: UIImage
-    var imagePicker: UIImagePickerController
+    //var chosenImage: UIImage
+    //var imagePicker: UIImagePickerController
     
     
     @IBOutlet weak var schoolNameTF: UITextField!
