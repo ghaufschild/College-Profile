@@ -12,7 +12,7 @@ class College: NSObject {
     
     var name: String = ""
     var location: String = ""
-    var mascot: String = ""
+    var website: String = ""
     var colors: String = ""
     var act: Int = 0
     var enrollment: Int = 0
@@ -24,12 +24,12 @@ class College: NSObject {
         self.name = name
     }
     
-    convenience init(name: String, location: String, mascot: String, colors: String, act: Int, enrollment: Int, image: UIImage)
+    convenience init(name: String, location: String, website: String, colors: String, act: Int, enrollment: Int, image: UIImage)
     {
         self.init()
         self.name = name
         self.location = location
-        self.mascot = mascot
+        self.website = website
         self.colors = colors
         self.act = act
         self.enrollment = enrollment

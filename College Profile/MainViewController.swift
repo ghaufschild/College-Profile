@@ -19,9 +19,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         editButton.tag = 0
         
-        colleges.append(College(name: "The Ohio State University", location: "Columbus, Ohio", mascot: "Brutus Buckeyes", colors: "Grey and Scarlet", act: 28, enrollment: 64868, image: UIImage(named: "Ohio State")!))
-        colleges.append(College(name: "Illinois University at Urbana-Champaign", location: "Urbana-Champaign, Illinois", mascot: "Fighting Illini", colors: "Blue and Orange", act: 28, enrollment: 44087, image: UIImage(named: "UIUC")!))
-        colleges.append(College(name: "Purdue", location: "West Lafayette, Indiana", mascot: "Boilermakers", colors: "Black and Old Gold", act: 30, enrollment: 38770, image: UIImage(named: "Purdue")!))
+        colleges.append(College(name: "The Ohio State University", location: "Columbus, Ohio", website: "https://www.osu.edu/", colors: "Grey and Scarlet", act: 28, enrollment: 64868, image: UIImage(named: "Ohio State")!))
+        colleges.append(College(name: "Illinois University at Urbana-Champaign", location: "Urbana-Champaign, Illinois", website: "http://illinois.edu/", colors: "Blue and Orange", act: 28, enrollment: 44087, image: UIImage(named: "UIUC")!))
+        colleges.append(College(name: "Purdue", location: "West Lafayette, Indiana", website: "https://www.purdue.edu/", colors: "Black and Old Gold", act: 30, enrollment: 38770, image: UIImage(named: "Purdue")!))
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -69,19 +69,26 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //IBActions
     @IBAction func onAddTapped(sender: AnyObject) {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "Which college are you looking at?"
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
+            textField.placeholder = "Which college are you looking at?"
         }
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "Where is you college located?"
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
+            textField.placeholder = "Where is you college located?"
         }
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What is the enrollment?"
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
+            textField.placeholder = "What is the enrollment?"
             textField.keyboardType = .NumberPad
         }
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What is the average ACT?"
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
+            textField.placeholder = "What is the average ACT?"
             textField.keyboardType = .NumberPad
         }
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What are the school colors?"
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
+            textField.placeholder = "What are the school colors?"
         }
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "What is the school mascot?"
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
+            textField.placeholder = "What is the school URL?"
+            textField.keyboardType = .URL
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -93,8 +100,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let enrollmentTextField = alert.textFields![2] as UITextField
             let actTextField = alert.textFields![3] as UITextField
             let colorsTextField = alert.textFields![4] as UITextField
-            let mascotTextField = alert.textFields![5] as UITextField
-            self.colleges.append(College(name: collegeTextField.text!, location: locationTextField.text!, mascot: mascotTextField.text!, colors: colorsTextField.text!, act: Int(actTextField.text!)!, enrollment: Int(enrollmentTextField.text!)!, image: UIImage(named: "Default")!))
+            let websiteTextField = alert.textFields![5] as UITextField
+            self.colleges.append(College(name: collegeTextField.text!, location: locationTextField.text!, website: websiteTextField.text!, colors: colorsTextField.text!, act: Int(actTextField.text!)!, enrollment: Int(enrollmentTextField.text!)!, image: UIImage(named: "Default")!))
             self.collegeHolder.reloadData()
         }
         
